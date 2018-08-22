@@ -100,9 +100,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="DAL\SingletonContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808221749152_CreateDataBaseEasyPark.cs" />
+    <Compile Include="Migrations\201808221749152_CreateDataBaseEasyPark.Designer.cs">
+      <DependentUpon>201808221749152_CreateDataBaseEasyPark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808221757134_AlterTableAutomoveis.cs" />
+    <Compile Include="Migrations\201808221757134_AlterTableAutomoveis.Designer.cs">
+      <DependentUpon>201808221757134_AlterTableAutomoveis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Automovel.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Context.cs" />
@@ -124,6 +134,14 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201808221749152_CreateDataBaseEasyPark.resx">
+      <DependentUpon>201808221749152_CreateDataBaseEasyPark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808221757134_AlterTableAutomoveis.resx">
+      <DependentUpon>201808221757134_AlterTableAutomoveis.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

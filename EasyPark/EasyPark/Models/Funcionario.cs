@@ -8,7 +8,7 @@ using System.Web;
 namespace EasyPark.Models
 {
     [Table("Funcionarios")]
-    public class Funcionario 
+    public class Funcionario : Pessoa
     {
         [Key]
         public int FuncionarioID { get; set; }
@@ -16,5 +16,6 @@ namespace EasyPark.Models
         [Required(ErrorMessage = "Campo obrigatório!")]
         [MinLength(6, ErrorMessage = "O campo deve ter no mínimo 6 caracteres!")]
         [Display(Name = "Senha")]
+        public string senha { get; set; }
     }
 }

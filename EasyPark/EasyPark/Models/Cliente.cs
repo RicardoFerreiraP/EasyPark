@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace EasyPark.Models
 {
     [Table("Clientes")]
-    public class Cliente
+    public class Cliente : Pessoa
     {
         [Key]        
         public int ClienteID { get; set; }
