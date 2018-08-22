@@ -95,12 +95,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AutomovelController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\FuncionarioController.cs" />
+    <Compile Include="Controllers\VagaController.cs" />
+    <Compile Include="DAL\AutomovelDAO.cs" />
+    <Compile Include="DAL\ClienteDAO.cs" />
+    <Compile Include="DAL\FuncionarioDAO.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
+    <Compile Include="DAL\VagaDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -124,6 +133,7 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Views\Shared\Layout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -133,7 +143,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Views\Automovel\" />
+    <Folder Include="Views\Cliente\" />
+    <Folder Include="Views\Funcionario\" />
+    <Folder Include="Views\Vaga\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201808221749152_CreateDataBaseEasyPark.resx">
