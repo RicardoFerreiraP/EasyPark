@@ -13,5 +13,7 @@ namespace EasyPark.Models
         public DbSet<Automovel> Automoveis { get; set; }
 
         public DbSet<Vaga> Vagas { get; set; }
+
+        public DbSet<Historico> Historicos { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.4.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -95,8 +96,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -121,19 +131,32 @@
     <Compile Include="Migrations\201808221757134_AlterTableAutomoveis.Designer.cs">
       <DependentUpon>201808221757134_AlterTableAutomoveis.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201808311401271_AddTableHistoricos.cs" />
+    <Compile Include="Migrations\201808311401271_AddTableHistoricos.Designer.cs">
+      <DependentUpon>201808311401271_AddTableHistoricos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Automovel.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\Historico.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Models\Vaga.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\Layout.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Cliente\CadastroCliente.cshtml" />
+    <Content Include="Views\Automovel\CadastrarAutomovel.cshtml" />
+    <Content Include="Views\Funcionario\CadastrarFuncionario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -143,9 +166,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Automovel\" />
-    <Folder Include="Views\Cliente\" />
-    <Folder Include="Views\Funcionario\" />
     <Folder Include="Views\Vaga\" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808221757134_AlterTableAutomoveis.resx">
       <DependentUpon>201808221757134_AlterTableAutomoveis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808311401271_AddTableHistoricos.resx">
+      <DependentUpon>201808311401271_AddTableHistoricos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

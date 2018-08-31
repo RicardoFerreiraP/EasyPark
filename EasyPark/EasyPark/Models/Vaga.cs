@@ -12,6 +12,6 @@ namespace EasyPark.Models
         [Required]
         public bool Disponivel { get; set; }
        
-        public Cliente Cliente { get; set; }
+       
     }
 }

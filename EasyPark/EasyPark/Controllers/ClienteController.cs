@@ -9,5 +9,13 @@ namespace EasyPark.Controllers
         {
             return View();
         }
+
+        public ActionResult CadastroCliente()
+        {
+
+            return View();
+        } 
+
+
     }
 }
