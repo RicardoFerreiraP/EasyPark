@@ -10,7 +10,7 @@ namespace EasyPark.Models
     {
         [Required(ErrorMessage = "Campo Obrigatório!")]
         [MaxLength(150, ErrorMessage = "O campo deve ter no máximo 150 caracteres!")]
-        [Display(Name = "Nome do Funcionário")]
+        [Display(Name = "Nome")]
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Campo Obrigatório!")]

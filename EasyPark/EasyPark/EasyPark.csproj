@@ -101,6 +101,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\semimagem.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -152,11 +153,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\Layout.cshtml" />
-    <Content Include="Views\Cliente\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Cliente\CadastroCliente.cshtml" />
     <Content Include="Views\Automovel\CadastrarAutomovel.cshtml" />
     <Content Include="Views\Funcionario\CadastrarFuncionario.cshtml" />
+    <Content Include="Views\Cliente\CadastrarCliente.cshtml" />
+    <Content Include="Views\Cliente\ClientesCadastrados.cshtml" />
+    <Content Include="Views\Cliente\AlterarCliente.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

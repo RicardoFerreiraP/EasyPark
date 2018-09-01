@@ -1,0 +1,44 @@
+﻿@using EasyPark.Models
+@model List<Cliente>
+@{
+    ViewBag.Title = "Clientes Cadastrados";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div>
+    
+    @Html.ActionLink("Cadastrar um novo cliente", "CadastrarCliente", "Cliente")
+
+    <table class="table table-hover table-striped" style="margin-top:30px">
+        <tr>
+            <th>Imagem</th>
+            <th>Nome Cliente</th>
+            <th>CPF</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (Cliente clienteCadastrado in Model)
+        {
+        <tr>
+            <td>
+                <img src="~/Images/@clienteCadastrado.Imagem" alt="Foto do cliente" style="width:100px;height:100px" />
+            </td>
+            <td>@clienteCadastrado.Nome</td>
+            <td>@clienteCadastrado.CPF</td>
+            <td>@clienteCadastrado.Telefone</td>
+            <td>@clienteCadastrado.Email</td>
+            <td>
+                @Html.ActionLink("Remover", "RemoverCliente", "Cliente", new { id = clienteCadastrado.ClienteID }, null)
+            </td>
+
+            <td>
+                @Html.ActionLink("Alterar", "AlterarCliente", "Cliente", new { id = clienteCadastrado.ClienteID }, null)
+            </td>
+        </tr>
+        }
+    </table>
+
+</div>

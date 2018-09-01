@@ -1,0 +1,54 @@
+﻿@using EasyPark.Models
+@model Cliente
+@{
+    ViewBag.Title = "Alterar Cliente";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div>
+    @using (Html.BeginForm("AlterarCliente", "Cliente", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        <fieldset>
+            <legend>Alterar Cliente</legend>
+            @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.ClienteID)
+            <div class="form-group">
+                @Html.Label("Nome do cliente", new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Nome, new { @class = "form-control", @placeholder = "Nome do cliente" })
+                    @Html.ValidationMessageFor(model => model.Nome, null, new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("CPF", new { @class = "control-label col-sm-3" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.CPF, new { @class = "form-control", @placeholder = "CPF" })
+                    @Html.ValidationMessageFor(model => model.CPF, null, new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Telefone", new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Telefone, new { @class = "form-control", @placeholder = "Telefone" })
+                    @Html.ValidationMessageFor(model => model.Telefone, null, new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Email", new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Email" })
+                    @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" value="Salvar" class="btn btn-primary">
+                </div>
+            </div>
+        </fieldset>
+    }
+</div>
+
