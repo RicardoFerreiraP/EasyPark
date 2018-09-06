@@ -96,9 +96,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\semimagem.jpg" />
@@ -155,10 +153,12 @@
     <Content Include="Views\Shared\Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Automovel\CadastrarAutomovel.cshtml" />
-    <Content Include="Views\Funcionario\CadastrarFuncionario.cshtml" />
     <Content Include="Views\Cliente\CadastrarCliente.cshtml" />
     <Content Include="Views\Cliente\ClientesCadastrados.cshtml" />
     <Content Include="Views\Cliente\AlterarCliente.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Funcionario\CadastrarFuncionario.cshtml" />
+    <Content Include="Views\Funcionario\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

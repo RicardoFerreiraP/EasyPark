@@ -43,8 +43,13 @@ namespace EasyPark.Controllers
                 {
                     cliente.Imagem = "semimagem.jpg";
                 }
-                ClienteDAO.CadastrarCliente(cliente);
-                return RedirectToAction("ClientesCadastrados");
+                if (ClienteDAO.CadastrarCliente(cliente))
+                {
+                    ClienteDAO.CadastrarCliente(cliente);
+                    return RedirectToAction("ClientesCadastrados");
+                }
+                ModelState.AddModelError("", "Já existe um cliente com este CPF!!");
+                return View(cliente);
             }
             else
             {

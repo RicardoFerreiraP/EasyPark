@@ -13,11 +13,20 @@ namespace EasyPark.DAL
         {
              return ctx.Clientes.Find(id);
         }
-
-        public static void CadastrarCliente(Cliente cliente)
+        public static Cliente BuscarClientePorCPF(Cliente cliente)
         {
-            ctx.Clientes.Add(cliente);
-            ctx.SaveChanges();            
+            return ctx.Clientes.FirstOrDefault(x => x.CPF.Equals(cliente.CPF));
+        }
+
+        public static bool CadastrarCliente(Cliente cliente)
+        {
+            if (BuscarClientePorCPF(cliente) == null)
+            {
+                ctx.Clientes.Add(cliente);
+                ctx.SaveChanges();
+                return true;
+            }
+            return false;
         }
 
         public static List<Cliente> ListarTodosClientes()
