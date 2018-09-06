@@ -3,6 +3,7 @@ using EasyPark.Models;
 using System.IO;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace EasyPark.Controllers
 {
@@ -52,5 +53,19 @@ namespace EasyPark.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Login([Bind(Include = "CPF, Senha")] Funcionario funcionario)
+        {
+           funcionario = FuncionarioDAO.BuscarFuncionarioLogin(funcionario);
+            if (funcionario != null)
+            {
+                //autenticar
+                FormsAuthentication.SetAuthCookie(funcionario.CPF, false);
+                return RedirectToAction("ClientesCadastrados", "Cliente");
+            }
+            ModelState.AddModelError("", "CPF ou senha inválidos");
+            return View(funcionario);
+        }
+
     }
 }

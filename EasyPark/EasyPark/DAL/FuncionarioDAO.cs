@@ -24,5 +24,9 @@ namespace EasyPark.DAL
 
             return false;
         }
+        public static Funcionario BuscarFuncionarioLogin(Funcionario funcionario)
+        {
+            return ctx.Funcionarios.FirstOrDefault(x => x.CPF.Equals(funcionario.CPF) && x.Senha.Equals(funcionario.Senha));
+        }
     }
 }

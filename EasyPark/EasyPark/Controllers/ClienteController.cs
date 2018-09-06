@@ -26,7 +26,7 @@ namespace EasyPark.Controllers
         }
 
         [HttpPost]
-        public ActionResult CadastrarCliente(Cliente cliente, HttpPostedFileBase fupImagem)
+        public ActionResult CadastrarCliente([Bind(Include = "ClienteID, Nome, CPF, Telefone, Email")] Cliente cliente, HttpPostedFileBase fupImagem)
         {
 
             if (ModelState.IsValid)
