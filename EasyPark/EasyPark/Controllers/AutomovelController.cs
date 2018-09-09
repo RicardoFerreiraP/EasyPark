@@ -15,7 +15,7 @@ namespace EasyPark.Controllers
         }
         public ActionResult AutomovelCadastrados()
         {
-            return View(AutomovelDAO.ListarTodosAutomovel());
+            return View(AutomovelDAO.ListarTodosAutomoveis());
         }
 
         public ActionResult CadastrarAutomovel()
@@ -58,13 +58,13 @@ namespace EasyPark.Controllers
 
         public ActionResult AlterarAutomovel(int id)
         {
-            return View(AutomovelDAO.BuscarAutomovelPorID(id));
+            return View(AutomovelDAO.BuscaAutomovelPorId(id));
         }
 
         [HttpPost]
         public ActionResult AlterarAutomovel(Automovel automovelAlterado)
         {
-            Automovel automovelOriginal = AutomovelDAO.BuscarAutomovelPorID(automovelAlterado.AutomovelID);
+            Automovel automovelOriginal = AutomovelDAO.BuscaAutomovelPorId(automovelAlterado.AutomovelID);
 
             automovelOriginal.Placa = automovelAlterado.Placa;
             automovelOriginal.Marca = automovelAlterado.Marca;
