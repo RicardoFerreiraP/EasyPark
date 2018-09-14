@@ -160,6 +160,8 @@
     <Content Include="Views\Funcionario\CadastrarFuncionario.cshtml" />
     <Content Include="Views\Funcionario\Login.cshtml" />
     <Content Include="Views\Vaga\Index.cshtml" />
+    <Content Include="Views\Automovel\AlterarAutomovel.cshtml" />
+    <Content Include="Views\Automovel\AutomovelCadastrado.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
