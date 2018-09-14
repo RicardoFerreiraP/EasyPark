@@ -31,6 +31,17 @@ namespace EasyPark.Controllers
             if (ModelState.IsValid)
             {
 
+                if (fupImagem != null)
+                {
+                    string nomeImagem = Path.GetFileName(fupImagem.FileName);
+                    string caminho = Path.Combine(Server.MapPath("~/Images/"), nomeImagem);
+                    fupImagem.SaveAs(caminho);
+                    automovel.Imagem = nomeImagem;
+                }
+                else
+                {
+                    automovel.Imagem = "semimagem.jpg";
+                }
                 if (AutomovelDAO.CadastrarAutomovel(automovel))
                 {
                     AutomovelDAO.CadastrarAutomovel(automovel);
