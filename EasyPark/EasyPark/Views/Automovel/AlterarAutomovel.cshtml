@@ -1,0 +1,54 @@
+﻿@using EasyPark.Models
+@model Automovel
+@{
+    ViewBag.Title = "AlterarAutomovel";
+    Layout = "~/Views/_ViewStart.cshtml";
+}
+
+<div>
+    @using (Html.BeginForm("AlterarAutomovel", "Automovel", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        <fieldset>
+            <legend>Alterar Automovel</legend>
+            @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.AutomovelID)
+            <div class="form-group">
+                @Html.Label("Placa do Automovel", new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Placa, new { @class = "form-control", @placeholder = "Placa do Automovel" })
+                    @Html.ValidationMessageFor(model => model.Placa, null, new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Marca do Automovel", new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Marca, new { @class = "form-control", @placeholder = "Marca do Automovel" })
+                    @Html.ValidationMessageFor(model => model.Marca, null, new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Modelo do Automovel", new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Modelo, new { @class = "form-control", @placeholder = "Modelo do Automovel" })
+                    @Html.ValidationMessageFor(model => model.Modelo, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("Tipo do Automovel", new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Tipo, new { @class = "form-control", @placeholder = "Tipo do Automovel" })
+                    @Html.ValidationMessageFor(model => model.Tipo, null, new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" value="Salvar" class="btn btn-primary">
+                </div>
+            </div>
+        </fieldset>
+
+    }
+</div>
+

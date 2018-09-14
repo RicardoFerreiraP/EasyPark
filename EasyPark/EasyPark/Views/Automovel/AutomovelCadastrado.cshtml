@@ -1,0 +1,46 @@
+﻿@using EasyPark.Models
+@model List<Automovel>
+@{
+    ViewBag.Title = "AutomovelCadastrado";
+    Layout = "~/Views/_ViewStart.cshtml";
+}
+
+<div>
+
+    @Html.ActionLink("Cadastrar um novo automovel", "CadastrarAutomovel", "Automovel")
+
+    <table class="table table-hover table-striped" style="margin-top:30px">
+        <tr>
+            <th>Placa</th>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Tipo</th>
+       
+
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (Automovel automovelCadastrado in Model)
+        {
+            <tr>
+                <td>
+                    
+                </td>
+                <td>@automovelCadastrado.Placa</td>
+                <td>@automovelCadastrado.Marca</td>
+                <td>@automovelCadastrado.Modelo</td>
+                <td>@automovelCadastrado.Tipo</td>
+                <td>
+                    @Html.ActionLink("Remover", "RemoverAutomovel", "Automovel", new { id = automovelCadastrado.AutomovelID }, null)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Alterar", "AlterarAutomovel", "Automovel", new { id = automovelCadastrado.AutomovelID }, null)
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>
+
+
