@@ -163,6 +163,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Funcionario\CadastrarFuncionario.cshtml" />
     <Content Include="Views\Funcionario\Login.cshtml" />
+    <Content Include="Views\Vaga\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -172,7 +173,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Vaga\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201808221749152_CreateDataBaseEasyPark.resx">

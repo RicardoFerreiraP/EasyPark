@@ -17,11 +17,11 @@
                         <div class="card-header">Vaga Disponível</div>
                         <div class="card-body">
                             <h4 class="card-title">Teste</h4>
-                            <p class="card-text">@Html.ActionLink("Ocupar Vaga", "OcuparVaga", "Vaga", new { id = v.VagaID }, null )</p>
+                            <p class="card-text">@Html.ActionLink("Ocupar Vaga", "OcuparVaga", "Vaga", new { id = v.VagaID }, null)</p>
                         </div>
                     </div>
                 }
-                
+
                 @if (v.Disponivel == false)
                 {
                     <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
