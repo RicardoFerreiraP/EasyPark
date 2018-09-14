@@ -80,7 +80,7 @@ namespace EasyPark.Controllers
             if (ModelState.IsValid)
             {
                 FuncionarioDAO.AlterarFuncionario(funcionarioOriginal);
-                return RedirectToAction("ClientesCadastrados", "Cliente");
+                return RedirectToAction("FuncionariosCadastrados", "Funcionario");
 
             }
             else
@@ -102,7 +102,7 @@ namespace EasyPark.Controllers
             {
                 //autenticar
                 FormsAuthentication.SetAuthCookie(funcionario.CPF, false);
-                return RedirectToAction("ClientesCadastrados", "Cliente");
+                return RedirectToAction("FuncionariosCadastrados", "Funcionario");
             }
             ModelState.AddModelError("", "CPF ou senha inválidos");
             return View(funcionario);

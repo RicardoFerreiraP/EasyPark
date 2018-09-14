@@ -115,10 +115,12 @@
     <Compile Include="Controllers\AutomovelController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
+    <Compile Include="Controllers\HistoricoController.cs" />
     <Compile Include="Controllers\VagaController.cs" />
     <Compile Include="DAL\AutomovelDAO.cs" />
     <Compile Include="DAL\ClienteDAO.cs" />
     <Compile Include="DAL\FuncionarioDAO.cs" />
+    <Compile Include="DAL\HistoricoDAO.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
     <Compile Include="DAL\VagaDAO.cs" />
     <Compile Include="Global.asax.cs">
@@ -173,6 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Historico\" />
     <Folder Include="Views\Vaga\" />
   </ItemGroup>
   <ItemGroup>
