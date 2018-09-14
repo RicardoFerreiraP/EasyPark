@@ -1,0 +1,39 @@
+﻿@using EasyPark.Models
+@model List<Funcionario>
+@{
+    ViewBag.Title = "Funcionarios Cadastrados";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div>
+
+    <table class="table table-hover table-striped" style="margin-top:30px">
+        <tr>
+            <th>Imagem</th>
+            <th>Nome Funcionario</th>
+            <th>CPF</th>
+            <th>Telefone</th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (Funcionario funcionarioCadastrado in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/Images/@funcionarioCadastrado.Imagem" alt="Foto do funcionario" style="width:100px;height:100px" />
+                </td>
+                <td>@funcionarioCadastrado.Nome</td>
+                <td>@funcionarioCadastrado.CPF</td>
+                <td>@funcionarioCadastrado.Telefone</td>
+                <td>
+                    @Html.ActionLink("Remover", "RemoverFuncionario", "Funcionario", new { id = funcionarioCadastrado.FuncionarioID }, null)
+                </td>
+
+                <td>
+                    @Html.ActionLink("Alterar", "AlterarFuncionario", "Funcionario", new { id = funcionarioCadastrado.FuncionarioID }, null)
+                </td>
+            </tr>
+        }
+    </table>
+
+</div>

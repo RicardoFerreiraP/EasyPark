@@ -159,6 +159,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Funcionario\CadastrarFuncionario.cshtml" />
     <Content Include="Views\Funcionario\Login.cshtml" />
+    <Content Include="Views\Funcionario\AlterarFuncionario.cshtml" />
+    <Content Include="Views\Funcionario\FuncionariosCadastrados.cshtml" />
+    <Content Include="Views\Funcionario\Teste.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
