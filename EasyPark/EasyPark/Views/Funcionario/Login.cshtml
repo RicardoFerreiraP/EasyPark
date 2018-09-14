@@ -1,8 +1,38 @@
-﻿
+﻿@model EasyPark.Models.Funcionario
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2>Login</h2>
 
+@using (Html.BeginForm("Login", "Funcionario", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+    <fieldset>
+        <legend>Login</legend>
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.CPF, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.CPF, new { @class = "form-control" })                    
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Senha, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.PasswordFor(model => model.Senha, new { @class = "control-label col-md-2" })                   
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Entrar" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </fieldset>
+}
