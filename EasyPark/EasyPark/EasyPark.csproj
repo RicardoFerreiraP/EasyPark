@@ -47,9 +47,11 @@
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -113,10 +115,12 @@
     <Compile Include="Controllers\AutomovelController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
+    <Compile Include="Controllers\HistoricoController.cs" />
     <Compile Include="Controllers\VagaController.cs" />
     <Compile Include="DAL\AutomovelDAO.cs" />
     <Compile Include="DAL\ClienteDAO.cs" />
     <Compile Include="DAL\FuncionarioDAO.cs" />
+    <Compile Include="DAL\HistoricoDAO.cs" />
     <Compile Include="DAL\SingletonContext.cs" />
     <Compile Include="DAL\VagaDAO.cs" />
     <Compile Include="Global.asax.cs">
@@ -159,9 +163,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Funcionario\CadastrarFuncionario.cshtml" />
     <Content Include="Views\Funcionario\Login.cshtml" />
-    <Content Include="Views\Vaga\Index.cshtml" />
-    <Content Include="Views\Automovel\AlterarAutomovel.cshtml" />
-    <Content Include="Views\Automovel\AutomovelCadastrado.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -171,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Vaga\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201808221749152_CreateDataBaseEasyPark.resx">
