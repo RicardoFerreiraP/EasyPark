@@ -11,19 +11,19 @@ namespace EasyPark.DAL
         private static Context ctx = SingletonContext.GetInstance();
         public static Automovel BuscaAutomovelPorId(int id)
         {
-            return ctx.Automovel.Find(id);
+            return ctx.Automoveis.Find(id);
         }
 
         public static Automovel BuscaAutomovelPorPlaca(Automovel automovel)
         {
-            return ctx.Automovel.FirstOrDefault(x => x.Placa.Equals(automovel.Placa));
+            return ctx.Automoveis.FirstOrDefault(x => x.Placa.Equals(automovel.Placa));
         }
 
         public static bool CadastrarAutomovel(Automovel automovel)
         {
             if (BuscaAutomovelPorPlaca(automovel) == null)
             {
-                ctx.Automovel.Add(automovel);
+                ctx.Automoveis.Add(automovel);
                 ctx.SaveChanges();
                 return true;
             }
@@ -32,7 +32,7 @@ namespace EasyPark.DAL
 
         public static List<Automovel> ListarTodosAutomoveis()
         {
-            return ctx.Automovel.ToList();
+            return ctx.Automoveis.ToList();
         }
 
         public static void AlterarAutomovel(Automovel automovel)
@@ -43,7 +43,7 @@ namespace EasyPark.DAL
 
         public static void RemoverAutomovel(int id )
         {
-            ctx.Automovel.Remove(BuscaAutomovelPorId(id));
+            ctx.Automoveis.Remove(BuscaAutomovelPorId(id));
             ctx.SaveChanges();
         }
     }
