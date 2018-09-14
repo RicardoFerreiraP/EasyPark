@@ -1,7 +1,61 @@
-﻿
+﻿@model EasyPark.Models.Automovel
 @{
     ViewBag.Title = "CadastrarAutomovel";
+    Layout = "~/Views/Shared/Layout.cshtml";
 }
 
 <h2>CadastrarAutomovel</h2>
+
+<div>
+    @using (Html.BeginForm("CadastrarAutomovel", "automovel", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+    {
+        <fieldset>
+          
+            @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Placa, new { @class = "control-label col-sm-2" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Placa, new { @class = "form-control", @placeholder = "Placa do Automovel" })
+                    @Html.ValidationMessageFor(model => model.Placa, null, new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Marca, new { @class = "control-label col-sm-3" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Marca, new { @class = "form-control", @placeholder = "Marca do Automovel" })
+                    @Html.ValidationMessageFor(model => model.Marca, null, new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Modelo, new { @class = "control-label col-sm-3" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Modelo, new { @class = "form-control", @placeholder = "Modelo do Automovel" })
+                    @Html.ValidationMessageFor(model => model.Modelo, null, new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Tipo, new { @class = "control-label col-sm-3" })
+                <div class="col-sm-10">
+                    @Html.TextBoxFor(model => model.Tipo, new { @class = "form-control", @placeholder = "Tipo do Automovel" })
+                    @Html.ValidationMessageFor(model => model.Tipo, null, new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" value="Cadastrar" class="btn btn-primary">
+                    <input type="reset" value="Limpar" class="btn btn-secondary" />
+                </div>
+            </div>
+           
+        </fieldset> 
+
+            }
+
+
+</div>
+
 
