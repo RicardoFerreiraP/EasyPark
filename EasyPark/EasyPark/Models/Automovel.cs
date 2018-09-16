@@ -14,6 +14,7 @@ namespace EasyPark.Models
         public int AutomovelID { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório!")]
+        [MaxLength(8, ErrorMessage = "O campo deve ter no máximo 8 caracteres!")]
         public string Placa { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório")]
@@ -25,6 +26,7 @@ namespace EasyPark.Models
         [Required(ErrorMessage = "Campo obrigatório")]
         public string Tipo { get; set; }
 
+        [Required(ErrorMessage = "Campo obrigatório")]
         public Cliente Cliente { get; set; }
 
     }

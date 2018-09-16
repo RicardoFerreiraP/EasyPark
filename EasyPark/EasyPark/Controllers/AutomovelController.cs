@@ -13,7 +13,7 @@ namespace EasyPark.Controllers
         {
             return View();
         }
-        public ActionResult AutomovelCadastrados()
+        public ActionResult AutomoveisCadastrados()
         {
             return View(AutomovelDAO.ListarTodosAutomoveis());
         }
@@ -25,18 +25,26 @@ namespace EasyPark.Controllers
         }
 
         [HttpPost]
-        public ActionResult CadastrarAutomovel(Automovel automovel, HttpPostedFileBase fupImagem)
+        public ActionResult CadastrarAutomovel(Automovel automovel, string Clientes, HttpPostedFileBase fupImagem)
         {
 
             if (ModelState.IsValid)
             {
-
-                if (AutomovelDAO.CadastrarAutomovel(automovel))
+                automovel.Cliente = ClienteDAO.BuscarClientePorCPF(Clientes);
+                if (ClienteDAO.BuscarClientePorCPF(Clientes) == null)
                 {
-                    AutomovelDAO.CadastrarAutomovel(automovel);
-                    return RedirectToAction("AutomovelCadastrados");
-                }
+                    ModelState.AddModelError("", "Não existe um cliente com este CPF!!");
+                }           
+            
+            else if (AutomovelDAO.CadastrarAutomovel(automovel))
+            {
+
+                return RedirectToAction("AutomoveisCadastrados", "Automovel");
+            }
+            else
+            {
                 ModelState.AddModelError("", "Já existe um Automovel com esta Placa!!");
+            }
                 return View(automovel);
             }
             else
@@ -45,32 +53,6 @@ namespace EasyPark.Controllers
             }
         }
 
-        public ActionResult AlterarAutomovel(int id)
-        {
-            return View(AutomovelDAO.BuscaAutomovelPorId(id));
-        }
-
-        [HttpPost]
-        public ActionResult AlterarAutomovel(Automovel automovelAlterado)
-        {
-            Automovel automovelOriginal = AutomovelDAO.BuscaAutomovelPorId(automovelAlterado.AutomovelID);
-
-            automovelOriginal.Placa = automovelAlterado.Placa;
-            automovelOriginal.Marca = automovelAlterado.Marca;
-            automovelOriginal.Modelo = automovelAlterado.Modelo;
-            automovelOriginal.Tipo =   automovelAlterado.Tipo;
-
-            if (ModelState.IsValid)
-            {
-                AutomovelDAO.AlterarAutomovel(automovelOriginal);
-                return RedirectToAction("AutomovelCadastrados", "Automovel");
-
-            }
-            else
-            {
-                return View(automovelOriginal);
-            }
-        }
         public ActionResult RemoverAutomovel(int id)
         {
             AutomovelDAO.RemoverAutomovel(id);

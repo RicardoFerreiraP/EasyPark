@@ -2,7 +2,8 @@
 @model List<Automovel>
 @{
     ViewBag.Title = "AutomovelCadastrado";
-    Layout = "~/Views/_ViewStart.cshtml";
+    Layout = "~/Views/Shared/Layout.cshtml";
+
 }
 
 <div>
@@ -12,30 +13,22 @@
     <table class="table table-hover table-striped" style="margin-top:30px">
         <tr>
             <th>Placa</th>
+            <th>Dono</th>
             <th>Marca</th>
             <th>Modelo</th>
             <th>Tipo</th>
-       
-
-            <th></th>
             <th></th>
         </tr>
         @foreach (Automovel automovelCadastrado in Model)
         {
             <tr>
-                <td>
-                    
-                </td>
                 <td>@automovelCadastrado.Placa</td>
+                <td>@automovelCadastrado.Cliente.Nome</td>
                 <td>@automovelCadastrado.Marca</td>
                 <td>@automovelCadastrado.Modelo</td>
                 <td>@automovelCadastrado.Tipo</td>
                 <td>
                     @Html.ActionLink("Remover", "RemoverAutomovel", "Automovel", new { id = automovelCadastrado.AutomovelID }, null)
-                </td>
-
-                <td>
-                    @Html.ActionLink("Alterar", "AlterarAutomovel", "Automovel", new { id = automovelCadastrado.AutomovelID }, null)
                 </td>
             </tr>
         }

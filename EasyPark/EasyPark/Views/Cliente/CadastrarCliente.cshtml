@@ -21,7 +21,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.CPF, new { @class = "control-label col-sm-3" })
                 <div class="col-sm-10">
-                    @Html.TextBoxFor(model => model.CPF, new { @class = "form-control", @placeholder = "CPF" })
+                    @Html.TextBoxFor(model => model.CPF, new { @class = "form-control", @placeholder = "CPF (Somente números!)" })
                     @Html.ValidationMessageFor(model => model.CPF, null, new { @class = "text-danger" })
                 </div>
             </div>
@@ -29,7 +29,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Telefone, new { @class = "control-label col-sm-2" })
                 <div class="col-sm-10">
-                    @Html.TextBoxFor(model => model.Telefone, new { @class = "form-control", @placeholder = "Telefone" })
+                    @Html.TextBoxFor(model => model.Telefone, new { @class = "form-control", @placeholder = "(XX) XXXX-XXXX" })
                     @Html.ValidationMessageFor(model => model.Telefone, null, new { @class = "text-danger" })
                 </div>
             </div>
@@ -37,7 +37,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.Email, new { @class = "control-label col-sm-2" })
                 <div class="col-sm-10">
-                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Email" })
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Exemplo@xxx.com" })
                     @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-danger" })
                 </div>
             </div>

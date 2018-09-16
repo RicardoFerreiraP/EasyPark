@@ -32,13 +32,7 @@ namespace EasyPark.DAL
 
         public static List<Automovel> ListarTodosAutomoveis()
         {
-            return ctx.Automoveis.ToList();
-        }
-
-        public static void AlterarAutomovel(Automovel automovel)
-        {
-            ctx.Entry(automovel).State = EntityState.Modified;
-            ctx.SaveChanges();
+            return ctx.Automoveis.Include("Cliente").ToList();
         }
 
         public static void RemoverAutomovel(int id )

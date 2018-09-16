@@ -217,6 +217,14 @@
     <Compile Include="Migrations\201808311401271_AddTableHistoricos.Designer.cs">
       <DependentUpon>201808311401271_AddTableHistoricos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809161702010_AddMigrationCliente.cs" />
+    <Compile Include="Migrations\201809161702010_AddMigrationCliente.Designer.cs">
+      <DependentUpon>201809161702010_AddMigrationCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809161733558_AddNewTags.cs" />
+    <Compile Include="Migrations\201809161733558_AddNewTags.Designer.cs">
+      <DependentUpon>201809161733558_AddNewTags.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Automovel.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -248,6 +256,7 @@
     <Content Include="Views\Vaga\Index.cshtml" />
     <Content Include="Views\Funcionario\AlterarFuncionario.cshtml" />
     <Content Include="Views\Funcionario\FuncionariosCadastrados.cshtml" />
+    <Content Include="Views\Automovel\AutomoveisCadastrados.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -268,6 +277,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201808311401271_AddTableHistoricos.resx">
       <DependentUpon>201808311401271_AddTableHistoricos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809161702010_AddMigrationCliente.resx">
+      <DependentUpon>201809161702010_AddMigrationCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809161733558_AddNewTags.resx">
+      <DependentUpon>201809161733558_AddNewTags.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\EasyPark.Migrations.AddTableHistoricos.resources" />
     <EmbeddedResource Include="obj\Debug\EasyPark.Migrations.AlterTableAutomoveis.resources" />
