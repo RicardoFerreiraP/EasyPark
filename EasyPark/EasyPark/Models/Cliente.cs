@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EasyPark.Models
@@ -12,6 +13,6 @@ namespace EasyPark.Models
         [Display(Name = "Email")]
         [EmailAddress(ErrorMessage = "E-mail inválido!")]
         public string Email { get; set; }
-        
+
     }
 }

@@ -1,0 +1,50 @@
+﻿@model EasyPark.Models.Cliente
+@using EasyPark.Models
+@{
+    ViewBag.Title = "Detalhes Cliente";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    List<Automovel> List = ViewBag.Automoveis;
+}
+
+<table class="table table-hover table-striped" style="margin-top:30px">
+    <tr>
+        <td colspan="2">
+            <h4>@Model.Nome</h4>
+        </td>
+    </tr>
+    <tr>
+        <td style="width:400px">
+            <img src="~/Images/@Model.Imagem" class="img-thumbnail" />
+        </td>
+        <td style="vertical-align: top; padding-left: 30px">
+            <b>CPF: </b>@Model.CPF<br />
+            <b>Telefone: </b>@Model.Telefone<br />
+            <b>Email: </b>@Model.Email<br /><br />
+            @Html.ActionLink("Remover", "RemoverCliente", "Cliente", new { id = Model.ClienteID }, new { @class = "btn btn-outline-danger" })
+            @Html.ActionLink("Alterar", "AlterarCliente", "Cliente", new { id = Model.ClienteID }, new { @class = "btn btn-outline-success" })
+        </td>
+    </tr>
+</table>
+
+<legend style="margin-top:30px">Automoveis cadastrados</legend>
+<hr />
+<table class="table table-hover table-striped" style="margin-top:30px">
+    <tr>
+        <th>Placa</th>
+        <th>Dono</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Tipo</th>
+    </tr>
+    @foreach (Automovel automovelCadastrado in List)
+    {
+        <tr>
+            <td>@automovelCadastrado.Placa</td>
+            <td>@automovelCadastrado.Cliente.Nome</td>
+            <td>@automovelCadastrado.Marca</td>
+            <td>@automovelCadastrado.Modelo</td>
+            <td>@automovelCadastrado.Tipo</td>            
+        </tr>
+    }
+</table>
+    

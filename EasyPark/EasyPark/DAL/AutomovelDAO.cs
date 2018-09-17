@@ -40,5 +40,9 @@ namespace EasyPark.DAL
             ctx.Automoveis.Remove(BuscaAutomovelPorId(id));
             ctx.SaveChanges();
         }
+        public static List<Automovel> BuscarAutomoveisPorCPFCliente(string cpf)
+        {
+            return ctx.Automoveis.Include("Cliente").Where(x => x.Cliente.CPF.Equals(cpf)).ToList();
+        }
     }
 }

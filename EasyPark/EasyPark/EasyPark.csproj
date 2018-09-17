@@ -225,6 +225,10 @@
     <Compile Include="Migrations\201809161733558_AddNewTags.Designer.cs">
       <DependentUpon>201809161733558_AddNewTags.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809172102286_TirandoTag.cs" />
+    <Compile Include="Migrations\201809172102286_TirandoTag.Designer.cs">
+      <DependentUpon>201809172102286_TirandoTag.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Automovel.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -257,6 +261,7 @@
     <Content Include="Views\Funcionario\AlterarFuncionario.cshtml" />
     <Content Include="Views\Funcionario\FuncionariosCadastrados.cshtml" />
     <Content Include="Views\Automovel\AutomoveisCadastrados.cshtml" />
+    <Content Include="Views\Cliente\DetalhesCliente.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -283,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809161733558_AddNewTags.resx">
       <DependentUpon>201809161733558_AddNewTags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809172102286_TirandoTag.resx">
+      <DependentUpon>201809172102286_TirandoTag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\EasyPark.Migrations.AddTableHistoricos.resources" />
     <EmbeddedResource Include="obj\Debug\EasyPark.Migrations.AlterTableAutomoveis.resources" />

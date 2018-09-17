@@ -31,12 +31,10 @@
             <td>@clienteCadastrado.Telefone</td>
             <td>@clienteCadastrado.Email</td>
             <td>
-                @Html.ActionLink("Remover", "RemoverCliente", "Cliente", new { id = clienteCadastrado.ClienteID }, null)
+                @Html.ActionLink("+Detalhes", "DetalhesCliente", "Cliente", new {id = clienteCadastrado.ClienteID, cpf = clienteCadastrado.CPF }, new { @class = "btn btn-outline-success" })
             </td>
 
-            <td>
-                @Html.ActionLink("Alterar", "AlterarCliente", "Cliente", new { id = clienteCadastrado.ClienteID }, null)
-            </td>
+
         </tr>
         }
     </table>

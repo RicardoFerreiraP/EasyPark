@@ -83,6 +83,11 @@ namespace EasyPark.Controllers
                 return View(clienteOriginal);
             }
         }
+        public ActionResult DetalhesCliente(int id, string cpf)
+        {
+            ViewBag.Automoveis = AutomovelDAO.BuscarAutomoveisPorCPFCliente(cpf);
+            return View(ClienteDAO.BuscarClientePorID(id));
+        }
         public ActionResult RemoverCliente(int id)
         {
             ClienteDAO.RemoverCliente(id);

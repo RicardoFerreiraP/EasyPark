@@ -26,7 +26,6 @@ namespace EasyPark.Models
         [Required(ErrorMessage = "Campo obrigatório")]
         public string Tipo { get; set; }
 
-        [Required(ErrorMessage = "Campo obrigatório")]
         public Cliente Cliente { get; set; }
 
     }
