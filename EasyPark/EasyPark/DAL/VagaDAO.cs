@@ -14,5 +14,11 @@ namespace EasyPark.DAL
         {
             return ctx.Vagas.ToList();
         }
+
+        public static void CadastrarVaga(Vaga vaga)
+        {
+            ctx.Vagas.Add(vaga);
+            ctx.SaveChanges();
+        }
     }
 }

@@ -7,35 +7,30 @@
 <div>
     <h2>@Html.ActionLink("Cadastrar Vaga", "CadastrarVaga", "Vaga", null, null)</h2>
 
-    @foreach (Vaga v in Model)
-    {
+    <div style="margin-top:20px;">
         <div class="row">
-            <div class="col-3">
-                @if (v.Disponivel == true)
+            @foreach (Vaga v in Model)
+            {
+                if (v.Disponivel == true)
                 {
-                    <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+                    <div class="col-lg-2 card text-white bg-success" style="text-align:center; margin-left:30px; margin-bottom:20px; max-width:100rem">
                         <div class="card-header">Vaga Disponível</div>
                         <div class="card-body">
-                            <h4 class="card-title">Teste</h4>
-                            <p class="card-text">@Html.ActionLink("Ocupar Vaga", "OcuparVaga", "Vaga", new { id = v.VagaID }, null)</p>
+                            @Html.ActionLink("Ocupar Vaga", "OcuparVaga", "Vaga", new { id = v.VagaID }, new { @class = "btn btn-secondary" })
                         </div>
                     </div>
                 }
 
-                @if (v.Disponivel == false)
+                else if (v.Disponivel == false)
                 {
-                    <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
-                        <div class="card-header">Vaga Disponível</div>
+                    <div class="col-lg-2 card text-white bg-success" style="text-align:center; margin-left:30px; margin-bottom:20px; max-width:100rem">
+                        <div class="card-header">Vaga Indisponível</div>
                         <div class="card-body">
-                            <h4 class="card-title">Teste</h4>
-                            <p class="card-text">@Html.ActionLink("Exibir Detalhes", "VagaDetalhes", "Vaga", new { id = v.VagaID }, null)</p>
+                            @Html.ActionLink("Exibir Detalhes", "VagaDetalhes", "Vaga", new { id = v.VagaID }, new { @class = "btn btn-primary" })
                         </div>
                     </div>
                 }
-
-
-            </div>
+            }
         </div>
-    }
-
+    </div>
 </div>
