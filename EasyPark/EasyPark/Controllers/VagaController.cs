@@ -21,11 +21,6 @@ namespace EasyPark.Controllers
             return View();
         }
 
-        public ActionResult OcuparVaga()
-        {
-            return View();
-        }
-
         public ActionResult CadastrarVaga()
         {
             return View();
@@ -37,5 +32,6 @@ namespace EasyPark.Controllers
             VagaDAO.CadastrarVaga(vaga);
             return View();
         }
+
     }
 }

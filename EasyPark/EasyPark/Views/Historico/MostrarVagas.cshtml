@@ -14,19 +14,20 @@
                 if (v.Disponivel == true)
                 {
                     <div class="col-lg-2 card text-white bg-success" style="text-align:center; margin-left:30px; margin-bottom:20px; max-width:100rem">
-                        <div class="card-header">Vaga Disponível</div>
+                        <div class="card-header">Vaga @v.VagaID Disponível</div>
                         <div class="card-body">
-                            @Html.ActionLink("Ocupar Vaga", "OcuparVaga", "Vaga", new { id = v.VagaID }, new { @class = "btn btn-secondary" })
+                            @Html.ActionLink("Ocupar Vaga", "OcuparVaga", "Historico", new { id = v.VagaID }, new { @class = "btn btn-secondary" })
+         
                         </div>
                     </div>
                 }
 
                 else if (v.Disponivel == false)
                 {
-                    <div class="col-lg-2 card text-white bg-success" style="text-align:center; margin-left:30px; margin-bottom:20px; max-width:100rem">
-                        <div class="card-header">Vaga Indisponível</div>
+                    <div class="col-lg-2 card text-white bg-danger" style="text-align:center; margin-left:30px; margin-bottom:20px; max-width:100rem">
+                        <div class="card-header">Vaga @v.VagaID Indisponível</div>
                         <div class="card-body">
-                            @Html.ActionLink("Exibir Detalhes", "VagaDetalhes", "Vaga", new { id = v.VagaID }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Exibir Detalhes", "VagaDetalhes", "Historico", new { id = v.VagaID }, new { @class = "btn btn-primary" })
                         </div>
                     </div>
                 }

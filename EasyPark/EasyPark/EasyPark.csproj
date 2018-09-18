@@ -261,13 +261,14 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Funcionario\CadastrarFuncionario.cshtml" />
     <Content Include="Views\Funcionario\Login.cshtml" />
-    <Content Include="Views\Vaga\Index.cshtml" />
+    <Content Include="Views\Historico\MostrarVagas.cshtml" />
     <Content Include="Views\Funcionario\AlterarFuncionario.cshtml" />
     <Content Include="Views\Funcionario\FuncionariosCadastrados.cshtml" />
     <Content Include="Views\Automovel\AutomoveisCadastrados.cshtml" />
     <Content Include="Views\Cliente\DetalhesCliente.cshtml" />
     <Content Include="Views\Historico\Index.cshtml" />
     <Content Include="Views\Vaga\CadastrarVaga.cshtml" />
+    <Content Include="Views\Historico\OcuparVaga.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
