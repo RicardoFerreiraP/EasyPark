@@ -14,14 +14,14 @@ namespace EasyPark.DAL
             return ctx.Automoveis.Find(id);
         }
 
-        public static Automovel BuscaAutomovelPorPlaca(Automovel automovel)
+        public static Automovel BuscaAutomovelPorPlaca(string placa)
         {
-            return ctx.Automoveis.FirstOrDefault(x => x.Placa.Equals(automovel.Placa));
+            return ctx.Automoveis.FirstOrDefault(x => x.Placa.Equals(placa));
         }
 
         public static bool CadastrarAutomovel(Automovel automovel)
         {
-            if (BuscaAutomovelPorPlaca(automovel) == null)
+            if (BuscaAutomovelPorPlaca(automovel.Placa) == null)
             {
                 ctx.Automoveis.Add(automovel);
                 ctx.SaveChanges();
