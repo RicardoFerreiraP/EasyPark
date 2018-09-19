@@ -1,4 +1,5 @@
 ﻿using EasyPark.DAL;
+using EasyPark.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace EasyPark.Controllers
         // GET: Vaga
         public ActionResult Index()
         {
-            return View();
+            return View(VagaDAO.RetornarVagas());
         }
 
         public ActionResult DetalhesVaga()
@@ -20,9 +21,17 @@ namespace EasyPark.Controllers
             return View();
         }
 
-        public ActionResult OcuparVaga()
+        public ActionResult CadastrarVaga()
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult CadastrarVaga([Bind(Include = "VagaID, Disponivel")] Vaga vaga)
+        {
+            VagaDAO.CadastrarVaga(vaga);
+            return View();
+        }
+
     }
 }
