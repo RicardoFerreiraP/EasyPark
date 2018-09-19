@@ -16,7 +16,7 @@ namespace EasyPark.DAL
 
         public static Automovel BuscaAutomovelPorPlaca(string placa)
         {
-            return ctx.Automoveis.FirstOrDefault(x => x.Placa.Equals(placa));
+            return ctx.Automoveis.Include("Cliente").FirstOrDefault(x => x.Placa.Equals(placa));
         }
 
         public static bool CadastrarAutomovel(Automovel automovel)

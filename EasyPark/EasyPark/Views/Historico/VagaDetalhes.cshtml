@@ -1,0 +1,24 @@
+﻿@model EasyPark.Models.Historico
+@{
+    ViewBag.Title = "VagaDetalhes";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<table class="table table-hover table-striped" style="margin-top:30px">
+    <tr>
+        <td colspan="2">
+            <h4><b>Vaga</b>@Model.Vaga.VagaID</h4>
+        </td>
+    </tr>
+    <tr>
+       
+        <td style="vertical-align: top; padding-left: 30px">
+
+            <b>Modelo: </b>@Model.Automovel.Modelo<br />
+            <b>Marca: </b>@Model.Automovel.Marca<br />
+            <b>Placa: </b>@Model.Automovel.Placa<br /><br />
+
+        </td>
+    </tr>
+</table>
+

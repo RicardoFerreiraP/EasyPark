@@ -18,26 +18,59 @@ namespace EasyPark.Controllers
             return View(VagaDAO.RetornarVagas());
         }
 
-        public ActionResult  OcuparVaga(int id)
+        public ActionResult OcuparVaga(int id)
         {
-            int idVaga = VagaDAO.BuscarVagaPorIdVaga(id);
-            ViewBag.VagaId = idVaga;
-            return View();
+            Vaga vaga = VagaDAO.BuscarVagaPorId(id);
+            Historico historico = new Historico
+            {              
+                Vaga = vaga,
+                DataEntrada = DateTime.Now
+            };
+            return View(historico);
         }
         
         [HttpPost]
-        public ActionResult OcuparVaga(Historico historico, string placa, int id)
+        public ActionResult OcuparVaga(Historico historico, string placa)
         {
             if(ModelState.IsValid)
             {
-                historico.Vaga.VagaID = id;
                 historico.Automovel = AutomovelDAO.BuscaAutomovelPorPlaca(placa);
-                historico.DataEntrada = DateTime.Now;
-                HistoricoDAO.OcuparVaga(historico);
-                VagaDAO.AlterarVaga(historico.Vaga.VagaID);
+                historico.Vaga = VagaDAO.BuscarVagaPorId(historico.Vaga.VagaID);
+                if (HistoricoDAO.CarroEstacionado(historico) == null)
+                {
+
+                    if (AutomovelDAO.BuscaAutomovelPorPlaca(placa) == null)
+                    {
+                        HistoricoDAO.OcuparVaga(historico);
+                        VagaDAO.AlterarVaga(historico.Vaga.VagaID);
+
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Não existe um carro com essa placa!!");
+                        return View(historico);
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Este carro já está estacionado!!");
+                    return View(historico);
+                }
+               
+               
+            }
+            else
+            {
+                return View(historico);
             }
             
             return RedirectToAction("MostrarVagas", "Historico");
+        }
+
+        public ActionResult VagaDetalhes(int id)
+        {
+           
+            return View( HistoricoDAO.DetalhesVaga(id));
         }
     }
 }

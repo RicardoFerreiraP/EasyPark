@@ -36,16 +36,16 @@ namespace EasyPark.Controllers
                     ModelState.AddModelError("", "Não existe um cliente com este CPF!!");
                 }           
             
-            else if (AutomovelDAO.CadastrarAutomovel(automovel))
-            {
+                else if (AutomovelDAO.CadastrarAutomovel(automovel))
+                {
 
-                return RedirectToAction("AutomoveisCadastrados", "Automovel");
-            }
-            else
-            {
-                ModelState.AddModelError("", "Já existe um Automovel com esta Placa!!");
-            }
-                return View(automovel);
+                    return RedirectToAction("AutomoveisCadastrados", "Automovel");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Já existe um Automovel com esta Placa!!");
+                }
+                    return View(automovel);
             }
             else
             {

@@ -7,13 +7,13 @@ namespace EasyPark.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddMigrationCliente : IMigrationMetadata
+    public sealed partial class CriarBanco : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddMigrationCliente));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CriarBanco));
         
         string IMigrationMetadata.Id
         {
-            get { return "201809161702010_AddMigrationCliente"; }
+            get { return "201809192119265_CriarBanco"; }
         }
         
         string IMigrationMetadata.Source

@@ -29,8 +29,15 @@ namespace EasyPark.Controllers
         [HttpPost]
         public ActionResult CadastrarVaga([Bind(Include = "VagaID, Disponivel")] Vaga vaga)
         {
-            VagaDAO.CadastrarVaga(vaga);
-            return View();
+            if (ModelState.IsValid)
+            {
+                    VagaDAO.CadastrarVaga(vaga);
+                    return RedirectToAction("MostrarVagas", "Historico");
+            }
+            else
+            {
+                return View(vaga);
+            }
         }
 
     }

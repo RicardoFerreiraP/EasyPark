@@ -220,33 +220,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808221749152_CreateDataBaseEasyPark.cs" />
-    <Compile Include="Migrations\201808221749152_CreateDataBaseEasyPark.Designer.cs">
-      <DependentUpon>201808221749152_CreateDataBaseEasyPark.cs</DependentUpon>
+    <Compile Include="Migrations\201809192119265_CriarBanco.cs" />
+    <Compile Include="Migrations\201809192119265_CriarBanco.Designer.cs">
+      <DependentUpon>201809192119265_CriarBanco.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201808221757134_AlterTableAutomoveis.cs" />
-    <Compile Include="Migrations\201808221757134_AlterTableAutomoveis.Designer.cs">
-      <DependentUpon>201808221757134_AlterTableAutomoveis.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201808311401271_AddTableHistoricos.cs" />
-    <Compile Include="Migrations\201808311401271_AddTableHistoricos.Designer.cs">
-      <DependentUpon>201808311401271_AddTableHistoricos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809161702010_AddMigrationCliente.cs" />
-    <Compile Include="Migrations\201809161702010_AddMigrationCliente.Designer.cs">
-      <DependentUpon>201809161702010_AddMigrationCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809161733558_AddNewTags.cs" />
-    <Compile Include="Migrations\201809161733558_AddNewTags.Designer.cs">
-      <DependentUpon>201809161733558_AddNewTags.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809172102286_TirandoTag.cs" />
-    <Compile Include="Migrations\201809172102286_TirandoTag.Designer.cs">
-      <DependentUpon>201809172102286_TirandoTag.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809181352286_AlterTableVaga.cs" />
-    <Compile Include="Migrations\201809181352286_AlterTableVaga.Designer.cs">
-      <DependentUpon>201809181352286_AlterTableVaga.cs</DependentUpon>
+    <Compile Include="Migrations\201809192126386_TirarTag.cs" />
+    <Compile Include="Migrations\201809192126386_TirarTag.Designer.cs">
+      <DependentUpon>201809192126386_TirarTag.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Automovel.cs" />
@@ -284,6 +264,7 @@
     <Content Include="Views\Historico\Index.cshtml" />
     <Content Include="Views\Vaga\CadastrarVaga.cshtml" />
     <Content Include="Views\Historico\OcuparVaga.cshtml" />
+    <Content Include="Views\Historico\VagaDetalhes.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -296,30 +277,12 @@
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808221749152_CreateDataBaseEasyPark.resx">
-      <DependentUpon>201808221749152_CreateDataBaseEasyPark.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809192119265_CriarBanco.resx">
+      <DependentUpon>201809192119265_CriarBanco.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808221757134_AlterTableAutomoveis.resx">
-      <DependentUpon>201808221757134_AlterTableAutomoveis.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809192126386_TirarTag.resx">
+      <DependentUpon>201809192126386_TirarTag.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201808311401271_AddTableHistoricos.resx">
-      <DependentUpon>201808311401271_AddTableHistoricos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809161702010_AddMigrationCliente.resx">
-      <DependentUpon>201809161702010_AddMigrationCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809161733558_AddNewTags.resx">
-      <DependentUpon>201809161733558_AddNewTags.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809172102286_TirandoTag.resx">
-      <DependentUpon>201809172102286_TirandoTag.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809181352286_AlterTableVaga.resx">
-      <DependentUpon>201809181352286_AlterTableVaga.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\EasyPark.Migrations.AddTableHistoricos.resources" />
-    <EmbeddedResource Include="obj\Debug\EasyPark.Migrations.AlterTableAutomoveis.resources" />
-    <EmbeddedResource Include="obj\Debug\EasyPark.Migrations.CreateDataBaseEasyPark.resources" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
