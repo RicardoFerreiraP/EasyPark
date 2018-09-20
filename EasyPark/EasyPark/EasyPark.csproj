@@ -265,6 +265,7 @@
     <Content Include="Views\Vaga\CadastrarVaga.cshtml" />
     <Content Include="Views\Historico\OcuparVaga.cshtml" />
     <Content Include="Views\Historico\VagaDetalhes.cshtml" />
+    <Content Include="Views\Empresa.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
