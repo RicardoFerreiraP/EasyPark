@@ -34,5 +34,13 @@ namespace EasyPark.DAL
             ctx.Entry(vaga).State = EntityState.Modified;
             ctx.SaveChanges();
         }
+
+        internal static void Finalizado(int id)
+        {
+            Vaga vaga = BuscarVagaPorId(id);
+            vaga.Disponivel = true;
+            ctx.Entry(vaga).State = EntityState.Modified;
+            ctx.SaveChanges();
+        }
     }
 }

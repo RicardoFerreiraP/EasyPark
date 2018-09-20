@@ -39,7 +39,7 @@ namespace EasyPark.Controllers
                 if (HistoricoDAO.CarroEstacionado(historico) == null)
                 {
 
-                    if (AutomovelDAO.BuscaAutomovelPorPlaca(placa) == null)
+                    if (AutomovelDAO.BuscaAutomovelPorPlaca(placa) != null)
                     {
                         HistoricoDAO.OcuparVaga(historico);
                         VagaDAO.AlterarVaga(historico.Vaga.VagaID);
@@ -71,6 +71,16 @@ namespace EasyPark.Controllers
         {
            
             return View( HistoricoDAO.DetalhesVaga(id));
+        }
+
+        public ActionResult Finalizar(int id)
+        {
+
+            Historico historico = HistoricoDAO.BuscarHistoricoPorVagaId(id);
+            historico.DataSaida = DateTime.Now;
+            HistoricoDAO.Finalizar(historico);
+            VagaDAO.Finalizado(id);
+            return RedirectToAction("MostrarVagas", "Historico");
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using EasyPark.Models;
+using System;
+using System.Data.Entity;
 using System.Linq;
 
 namespace EasyPark.DAL
@@ -9,7 +11,7 @@ namespace EasyPark.DAL
 
         public static Historico CarroEstacionado(Historico historico)
         {
-            return ctx.Historicos.Include("Automovel").FirstOrDefault(x => x.Automovel.Placa.Equals(historico.Automovel.Placa));
+            return ctx.Historicos.Include("Automovel").FirstOrDefault(x => x.Automovel.Placa.Equals(historico.Automovel.Placa) && x.DataSaida == null);
         }
 
         public static void OcuparVaga(Historico historico)
@@ -21,6 +23,17 @@ namespace EasyPark.DAL
         public static Historico DetalhesVaga(int id)
         {
            return ctx.Historicos.Include("Automovel").Include("Vaga").FirstOrDefault(x => x.Vaga.VagaID == id);
+        }
+
+        public static Historico BuscarHistoricoPorVagaId(int id)
+        {
+            return ctx.Historicos.Include("Vaga").Include("Automovel").FirstOrDefault(x => x.Vaga.VagaID == id && x.DataSaida == null);
+        }
+
+        public static void Finalizar(Historico historico)
+        {
+            ctx.Entry(historico).State = EntityState.Modified;
+            ctx.SaveChanges();
         }
     }
 }

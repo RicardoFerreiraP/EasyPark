@@ -27,7 +27,8 @@
                     <div class="col-lg-2 card text-white bg-danger" style="text-align:center; margin-left:30px; margin-bottom:20px; max-width:100rem">
                         <div class="card-header">Vaga @v.VagaID Indisponível</div>
                         <div class="card-body">
-                            @Html.ActionLink("Exibir Detalhes", "VagaDetalhes", "Historico", new { id = v.VagaID }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("+Detalhes", "VagaDetalhes", "Historico", new { id = v.VagaID }, new { @class = "text-info" })
+                            @Html.ActionLink("Finalizar", "Finalizar", "Historico", new { id = v.VagaID }, new { @class = "text-info" })
                         </div>
                     </div>
                 }
