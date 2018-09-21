@@ -1,61 +1,62 @@
 ﻿@model EasyPark.Models.Cliente
-@{
-    ViewBag.Title = "Cadastro Cliente";
-    Layout = "~/Views/Shared/Layout.cshtml";
-}
+    @{
 
-<div>
-    @using (Html.BeginForm("CadastrarCliente", "Cliente", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
-    {
-        <fieldset>
-            <legend>Cadastrar Cliente</legend>
-            @Html.ValidationSummary(true, null, new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.Nome, new { @class = "control-label col-sm-2" })
-                <div class="col-sm-10">
-                    @Html.TextBoxFor(model => model.Nome, new { @class = "form-control", @placeholder = "Nome do cliente" })
-                    @Html.ValidationMessageFor(model => model.Nome, null, new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.CPF, new { @class = "control-label col-sm-3" })
-                <div class="col-sm-10">
-                    @Html.TextBoxFor(model => model.CPF, new { @class = "form-control", @placeholder = "CPF (Somente números!)" })
-                    @Html.ValidationMessageFor(model => model.CPF, null, new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Telefone, new { @class = "control-label col-sm-2" })
-                <div class="col-sm-10">
-                    @Html.TextBoxFor(model => model.Telefone, new { @class = "form-control", @placeholder = "(XX) XXXX-XXXX" })
-                    @Html.ValidationMessageFor(model => model.Telefone, null, new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Email, new { @class = "control-label col-sm-2" })
-                <div class="col-sm-10">
-                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Exemplo@xxx.com" })
-                    @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.Label("Imagem", new { @class = "control-label col-sm-2" })
-                <div class="col-sm-10">
-                    <input type="file" name="fupImagem" />
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <input type="submit" value="Cadastrar" class="btn btn-primary">
-                    <input type="reset"  value="Limpar" class="btn btn-secondary" /> 
-                </div>
-            </div>
-        </fieldset>
+        ViewBag.Title = "Cadastro Cliente";
+        Layout = "~/Views/Shared/Layout.cshtml";
     }
 
-</div>
+    <div>
+        @using (Html.BeginForm("CadastrarCliente", "Cliente", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+        {
+            <fieldset>
+                <legend>Cadastrar Cliente</legend>
+                @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Nome, new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(model => model.Nome, new { @class = "form-control", @placeholder = "Nome do cliente" })
+                        @Html.ValidationMessageFor(model => model.Nome, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CPF, new { @class = "control-label col-sm-3" })
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(model => model.CPF, new { @class = "form-control", @placeholder = "CPF (Somente números!)" })
+                        @Html.ValidationMessageFor(model => model.CPF, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Telefone, new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(model => model.Telefone, new { @class = "form-control", @placeholder = "(XX) XXXX-XXXX" })
+                        @Html.ValidationMessageFor(model => model.Telefone, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Exemplo@xxx.com" })
+                        @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.Label("Imagem", new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        <input type="file" name="fupImagem" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="submit" value="Cadastrar" class="btn btn-primary">
+                        <input type="reset" value="Limpar" class="btn btn-secondary" />
+                    </div>
+                </div>
+            </fieldset>
+        }
+
+    </div>

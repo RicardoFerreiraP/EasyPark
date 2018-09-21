@@ -212,6 +212,7 @@
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HistoricoController.cs" />
+    <Compile Include="Controllers\VagaAPIController.cs" />
     <Compile Include="Controllers\VagaController.cs" />
     <Compile Include="DAL\AutomovelDAO.cs" />
     <Compile Include="DAL\ClienteDAO.cs" />
@@ -267,7 +268,7 @@
     <Content Include="Views\Vaga\CadastrarVaga.cshtml" />
     <Content Include="Views\Historico\OcuparVaga.cshtml" />
     <Content Include="Views\Historico\VagaDetalhes.cshtml" />
-    <Content Include="Views\Empresa.cshtml" />
+    <Content Include="Views\Funcionario\Empresa.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

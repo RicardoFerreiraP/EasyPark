@@ -107,6 +107,10 @@ namespace EasyPark.Controllers
             ModelState.AddModelError("", "CPF ou senha inválidos");
             return View(funcionario);
         }
+        public ActionResult Empresa()
+        {
+            return View();
+        }
 
     }
 }

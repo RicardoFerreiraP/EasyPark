@@ -1,6 +1,11 @@
 ﻿using EasyPark.DAL;
 using EasyPark.Models;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -16,7 +21,14 @@ namespace EasyPark.Controllers
 
         public ActionResult ClientesCadastrados()
         {
-            return View(ClienteDAO.ListarTodosClientes());
+            string url = "http://localhost:50171/api/Cliente/Clientes";
+            WebClient client = new WebClient();
+            string json = client.DownloadString(url);
+            byte[] bytes = Encoding.Default.GetBytes(json);
+            json = Encoding.UTF8.GetString(bytes);
+            List<Cliente> listCliente = JsonConvert.DeserializeObject<List<Cliente>>(json);
+
+            return View(listCliente);
         }
 
         public ActionResult CadastrarCliente()
@@ -93,5 +105,7 @@ namespace EasyPark.Controllers
             ClienteDAO.RemoverCliente(id);
             return RedirectToAction("ClientesCadastrados", "Cliente");
         }
+       
+     
     }
 }

@@ -70,7 +70,7 @@ namespace EasyPark.Controllers
         public ActionResult VagaDetalhes(int id)
         {
            
-            return View( HistoricoDAO.DetalhesVaga(id));
+            return View(HistoricoDAO.DetalhesVaga(id));
         }
 
         public ActionResult Finalizar(int id)
