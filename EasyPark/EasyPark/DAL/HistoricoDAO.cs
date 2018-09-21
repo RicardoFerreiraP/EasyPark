@@ -1,5 +1,6 @@
 ﻿using EasyPark.Models;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
@@ -34,6 +35,16 @@ namespace EasyPark.DAL
         {
             ctx.Entry(historico).State = EntityState.Modified;
             ctx.SaveChanges();
+        }
+
+        public static Historico HistoricoNome(int id)
+        {
+            return ctx.Historicos.Include("Automovel").First(y => y.Automovel.Cliente.ClienteID == id);
+        }
+
+        public static List<Historico> BuscarHistorico(int id)
+        {
+            return ctx.Historicos.Include("Automovel.Cliente").Where(x => x.Automovel.Cliente.ClienteID == id).ToList();
         }
     }
 }

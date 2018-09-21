@@ -1,0 +1,39 @@
+﻿@using EasyPark.Models
+
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+    Historico h = ViewBag.HistoricoCliente;
+}
+
+<table class="table table-hover table-striped" style="margin-top:30px">
+    <tr>
+        <td colspan="2">
+            <h4><b>Cliente: @Model[0].Automovel.Cliente.Nome </b></h4>
+        </td>
+    </tr>
+
+    @model List<Historico>
+
+    <tr>
+        <th>Entrada</th>
+        <th>Automóvel</th>
+        <th>Placa</th>
+        <th>Saída</th>
+    </tr>
+
+    @foreach (var hist in Model)
+    {
+    <tr>
+        <td>@hist.DataEntrada</td>
+        <td>@hist.Automovel.Tipo</td>
+        <td>@hist.Automovel.Placa</td>
+        <td>@hist.DataSaida</td>
+    </tr>
+    }
+</table>
+
+<p>
+    Dados atualizados às: @DateTime.Now.ToString()
+</p>
+
+

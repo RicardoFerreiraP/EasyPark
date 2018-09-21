@@ -264,7 +264,7 @@
     <Content Include="Views\Funcionario\FuncionariosCadastrados.cshtml" />
     <Content Include="Views\Automovel\AutomoveisCadastrados.cshtml" />
     <Content Include="Views\Cliente\DetalhesCliente.cshtml" />
-    <Content Include="Views\Historico\Index.cshtml" />
+    <Content Include="Views\Historico\HistoricoCliente.cshtml" />
     <Content Include="Views\Vaga\CadastrarVaga.cshtml" />
     <Content Include="Views\Historico\OcuparVaga.cshtml" />
     <Content Include="Views\Historico\VagaDetalhes.cshtml" />

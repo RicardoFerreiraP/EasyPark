@@ -22,11 +22,14 @@
             <b>Email: </b>@Model.Email<br /><br />
             @Html.ActionLink("Remover", "RemoverCliente", "Cliente", new { id = Model.ClienteID }, new { @class = "btn btn-outline-danger" })
             @Html.ActionLink("Alterar", "AlterarCliente", "Cliente", new { id = Model.ClienteID }, new { @class = "btn btn-outline-success" })
+            <br /><br />
+            @Html.ActionLink("Exibir Histórico", "HistoricoCliente", "Historico", new { id = Model.ClienteID}, new { @class = "btn btn-outline-primary" })
         </td>
     </tr>
 </table>
 
 <legend style="margin-top:30px">Automoveis cadastrados</legend>
+@Html.ActionLink("Cadastrar automóvel", "CadastrarAutomovel", "Automovel", new { id = Model.ClienteID }, new { @class = "btn btn-success" })
 <hr />
 <table class="table table-hover table-striped" style="margin-top:30px">
     <tr>

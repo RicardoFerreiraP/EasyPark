@@ -82,5 +82,11 @@ namespace EasyPark.Controllers
             VagaDAO.Finalizado(id);
             return RedirectToAction("MostrarVagas", "Historico");
         }
+
+        public ActionResult HistoricoCliente(int id)
+        {
+            ViewBag.HistoricoCliente = HistoricoDAO.HistoricoNome(id);
+            return View(HistoricoDAO.BuscarHistorico(id));
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace EasyPark.Controllers
                 else if (AutomovelDAO.CadastrarAutomovel(automovel))
                 {
 
-                    return RedirectToAction("AutomoveisCadastrados", "Automovel");
+                    return RedirectToAction("ClientesCadastrados", "Cliente");
                 }
                 else
                 {
