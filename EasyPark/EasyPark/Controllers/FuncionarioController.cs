@@ -15,7 +15,8 @@ namespace EasyPark.Controllers
             return View();
         }
 
-       public ActionResult FuncionariosCadastrados()
+        [Authorize]
+        public ActionResult FuncionariosCadastrados()
         {
             return View(FuncionarioDAO.ListarTodosFuncionarios());
         }
@@ -24,11 +25,14 @@ namespace EasyPark.Controllers
         {
             return View();
         }
+
+        [Authorize]
         public ActionResult CadastrarFuncionario()
         {
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult CadastrarFuncionario([Bind(Include ="FuncionarioID, Nome, CPF, Telefone, Senha, ConfirmacaoDaSenha")] Funcionario  funcionario, HttpPostedFileBase fupImagem)
         {
@@ -61,11 +65,13 @@ namespace EasyPark.Controllers
             }
         }
 
+        [Authorize]
         public ActionResult AlterarFuncionario(int id)
         {
             return View(FuncionarioDAO.BuscarFuncionarioPorID(id));
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult AlterarFuncionario(Funcionario funcionarioAlterado)
         {
@@ -102,11 +108,18 @@ namespace EasyPark.Controllers
             {
                 //autenticar
                 FormsAuthentication.SetAuthCookie(funcionario.CPF, false);
-                return RedirectToAction("FuncionariosCadastrados", "Funcionario");
+                return RedirectToAction("MostrarVagas", "Historico");
             }
             ModelState.AddModelError("", "CPF ou senha inválidos");
             return View(funcionario);
         }
+
+        public ActionResult Sair()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login", "Funcionario");
+        }
+
         public ActionResult Empresa()
         {
             return View();

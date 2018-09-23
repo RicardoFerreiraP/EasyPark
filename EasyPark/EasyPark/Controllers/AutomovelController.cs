@@ -13,17 +13,21 @@ namespace EasyPark.Controllers
         {
             return View();
         }
+
+        [Authorize]
         public ActionResult AutomoveisCadastrados()
         {
             return View(AutomovelDAO.ListarTodosAutomoveis());
         }
 
+        [Authorize]
         public ActionResult CadastrarAutomovel()
         {
 
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult CadastrarAutomovel(Automovel automovel, string Clientes, HttpPostedFileBase fupImagem)
         {

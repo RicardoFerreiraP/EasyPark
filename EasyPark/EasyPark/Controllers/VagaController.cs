@@ -16,16 +16,19 @@ namespace EasyPark.Controllers
             return View(VagaDAO.RetornarVagas());
         }
 
+        [Authorize]
         public ActionResult DetalhesVaga()
         {
             return View();
         }
 
+        [Authorize]
         public ActionResult CadastrarVaga()
         {
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult CadastrarVaga([Bind(Include = "VagaID, Disponivel")] Vaga vaga)
         {

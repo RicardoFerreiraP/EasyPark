@@ -19,6 +19,7 @@ namespace EasyPark.Controllers
             return View();
         }
 
+        [Authorize]
         public ActionResult ClientesCadastrados()
         {
             string url = "http://localhost:50171/api/Cliente/Clientes";
@@ -31,12 +32,14 @@ namespace EasyPark.Controllers
             return View(listCliente);
         }
 
+        [Authorize]
         public ActionResult CadastrarCliente()
         {
 
             return View();
         }
-
+       
+        [Authorize]
         [HttpPost]
         public ActionResult CadastrarCliente([Bind(Include = "ClienteID, Nome, CPF, Telefone, Email")] Cliente cliente, HttpPostedFileBase fupImagem)
         {
@@ -68,12 +71,14 @@ namespace EasyPark.Controllers
                 return View(cliente);
             }
         }
-
+        
+        [Authorize]
         public ActionResult AlterarCliente(int id)
         {
             return View(ClienteDAO.BuscarClientePorID(id));
         }
 
+        [Authorize]
         [HttpPost]
         public ActionResult AlterarCliente(Cliente clienteAlterado)
         {
@@ -95,17 +100,23 @@ namespace EasyPark.Controllers
                 return View(clienteOriginal);
             }
         }
+
+        [Authorize]
         public ActionResult DetalhesCliente(int id, string cpf)
         {
             ViewBag.Automoveis = AutomovelDAO.BuscarAutomoveisPorCPFCliente(cpf);
             return View(ClienteDAO.BuscarClientePorID(id));
         }
+
         public ActionResult RemoverCliente(int id)
         {
             ClienteDAO.RemoverCliente(id);
             return RedirectToAction("ClientesCadastrados", "Cliente");
         }
-       
-     
+
+        public ActionResult Vagas()
+        {
+            return View(VagaDAO.RetornarVagas());
+        }
     }
 }

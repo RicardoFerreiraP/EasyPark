@@ -9,9 +9,55 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        @Html.ActionLink("EasyPark", "MostrarVagas", "Historico", null, new { @class = "navbar-brand" })
-        @Html.ActionLink(" | Cadastrar Funcionário", "CadastrarFuncionario", "Funcionario", null, new { @class = "navbar-brand" })
-        @Html.ActionLink(" | Cadastrar Cliente", "CadastrarCliente", "Cliente", null, new { @class = "navbar-brand" })
+
+        @Html.ActionLink("EasyPark", "Empresa", "Funcionario", null, new { @class = "navbar-brand" })
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                @if (Request.IsAuthenticated)
+                {
+                    <li class="nav-item active">
+                        @Html.ActionLink("Vagas", "MostrarVagas", "Historico", null, new { @class = "nav-link" })
+                    </li>
+
+                    <li class="nav-item active">
+                        @Html.ActionLink("Cadastrar Cliente", "CadastrarCliente", "Cliente", null, new { @class = "nav-link" })
+                    </li>
+
+                    <li class="nav-item active">
+                        @Html.ActionLink("Cadastrar Funcionário", "CadastrarFuncionario", "Funcionario", null, new { @class = "nav-link" })
+                    </li>
+
+                    <li class="nav-item active">
+                        @Html.ActionLink("Clientes Cadastrados", "ClientesCadastrados", "Cliente", null, new { @class = "nav-link" })
+                    </li>
+
+                    <li class="nav-item active">
+                        @Html.ActionLink("Funcionários Cadastrados", "FuncionariosCadastrados", "Funcionario", null, new { @class = "nav-link" })
+                    </li>
+
+                    <li class="nav-item active">
+                        @Html.ActionLink("Sair", "Sair", "Funcionario", null, new { @class = "badge-lg badge-pill badge-danger nav-link", @style = "margin-left:10px" })
+                    </li>
+                }
+
+                else
+                {
+                    <li class="nav-item active">
+
+                    <li class="nav-item active">
+                        @Html.ActionLink("Vagas", "Vagas", "Cliente", null, new { @class = "nav-link" })
+                    </li>
+
+                    </li>
+
+                    <li class="nav-item active">
+                        @Html.ActionLink("Login", "Login", "Funcionario", null, new { @class = "badge-lg badge-pill badge-success nav-link", @style = "margin-left:10px" })
+                    </li>
+                }
+
+            </ul>
+        </div>
     </nav>
 
     <div id="content" class="container" style="margin-top:30px">

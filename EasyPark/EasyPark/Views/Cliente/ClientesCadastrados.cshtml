@@ -3,12 +3,17 @@
 
 @{
     ViewBag.Title = "Clientes Cadastrados";
-    Layout = "~/Views/Shared/Layout.cshtml";  
+    Layout = "~/Views/Shared/Layout.cshtml";
 }
 
 <div>
-    
-    @Html.ActionLink("Cadastrar um novo cliente", "CadastrarCliente", "Cliente")
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Ocupar" class="btn btn-success" />
+        </div>
+    </div>
+
 
     <table class="table table-hover table-striped" style="margin-top:30px">
         <tr>
@@ -16,27 +21,27 @@
             <th>Nome Cliente</th>
             <th>CPF</th>
             <th>Telefone</th>
-            <th>Email</th>            
+            <th>Email</th>
             <th></th>
             <th></th>
         </tr>
 
         @foreach (Cliente clientecadastrado in Model)
         {
-        <tr>
-            <td>
-                <img src="~/images/@clientecadastrado.Imagem" alt="foto do cliente" style="width:100px;height:100px" />
-            </td>
-            <td>@clientecadastrado.Nome</td>
-            <td>@clientecadastrado.CPF</td>
-            <td>@clientecadastrado.Telefone</td>
-            <td>@clientecadastrado.Email</td>
-            <td>
-                @Html.ActionLink("+Detalhes", "Detalhescliente", "Cliente", new {id = clientecadastrado.ClienteID, cpf = clientecadastrado.CPF }, new { @class = "btn btn-outline-success" })
-            </td>
+            <tr>
+                <td>
+                    <img src="~/images/@clientecadastrado.Imagem" alt="foto do cliente" style="width:100px;height:100px" />
+                </td>
+                <td>@clientecadastrado.Nome</td>
+                <td>@clientecadastrado.CPF</td>
+                <td>@clientecadastrado.Telefone</td>
+                <td>@clientecadastrado.Email</td>
+                <td>
+                    @Html.ActionLink("+Detalhes", "Detalhescliente", "Cliente", new { id = clientecadastrado.ClienteID, cpf = clientecadastrado.CPF }, new { @class = "btn btn-outline-success" })
+                </td>
 
 
-        </tr>
+            </tr>
         }
     </table>
 

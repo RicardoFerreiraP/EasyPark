@@ -269,6 +269,7 @@
     <Content Include="Views\Historico\OcuparVaga.cshtml" />
     <Content Include="Views\Historico\VagaDetalhes.cshtml" />
     <Content Include="Views\Funcionario\Empresa.cshtml" />
+    <Content Include="Views\Cliente\Vagas.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

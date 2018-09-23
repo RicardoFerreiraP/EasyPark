@@ -3,9 +3,8 @@
 @{
     Layout = "~/Views/Shared/Layout.cshtml";
 }
-
-<h2>@Html.ActionLink("Cadastrar Vaga", "CadastrarVaga", "Vaga", null, null)</h2>
-
+<h2>Vagas disponíveis</h2>
+<h4>Dados atualizados às: @DateTime.Now</h4>
 <div style="margin-top:20px;">
     <div class="row">
         @foreach (Vaga v in Model)
@@ -15,8 +14,7 @@
                 <div class="col-lg-2 card text-white bg-success" style="text-align:center; margin-left:30px; margin-bottom:20px; max-width:100rem">
                     <div class="card-header">Vaga @v.VagaID Disponível</div>
                     <div class="card-body">
-                        @Html.ActionLink("Ocupar Vaga", "OcuparVaga", "Historico", new { id = v.VagaID }, new { @class = "btn btn-secondary" })
-
+                        <strong>Essa vaga pode ser sua!</strong>
                     </div>
                 </div>
             }
@@ -26,8 +24,7 @@
                 <div class="col-lg-2 card text-white bg-danger" style="text-align:center; margin-left:30px; margin-bottom:20px; max-width:100rem">
                     <div class="card-header">Vaga @v.VagaID Indisponível</div>
                     <div class="card-body">
-                        @Html.ActionLink("+Detalhes", "VagaDetalhes", "Historico", new { id = v.VagaID }, new { @class = "text-info" })
-                        @Html.ActionLink("Finalizar", "Finalizar", "Historico", new { id = v.VagaID }, new { @class = "text-info" })
+                        <strong>Infelizmente alguém já a ocupou! :(</strong>
                     </div>
                 </div>
             }

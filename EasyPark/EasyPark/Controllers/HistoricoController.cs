@@ -18,6 +18,7 @@ namespace EasyPark.Controllers
             return View(VagaDAO.RetornarVagas());
         }
 
+        [Authorize]
         public ActionResult OcuparVaga(int id)
         {
             Vaga vaga = VagaDAO.BuscarVagaPorId(id);
@@ -28,7 +29,8 @@ namespace EasyPark.Controllers
             };
             return View(historico);
         }
-        
+
+        [Authorize]
         [HttpPost]
         public ActionResult OcuparVaga(Historico historico, string placa)
         {
@@ -67,6 +69,7 @@ namespace EasyPark.Controllers
             return RedirectToAction("MostrarVagas", "Historico");
         }
 
+        [Authorize]
         public ActionResult VagaDetalhes(int id)
         {
            
@@ -83,6 +86,7 @@ namespace EasyPark.Controllers
             return RedirectToAction("MostrarVagas", "Historico");
         }
 
+        [Authorize]
         public ActionResult HistoricoCliente(int id)
         {
             ViewBag.HistoricoCliente = HistoricoDAO.HistoricoNome(id);
