@@ -39,7 +39,7 @@ namespace EasyPark.DAL
 
         public static Historico HistoricoNome(int id)
         {
-            return ctx.Historicos.Include("Automovel").First(y => y.Automovel.Cliente.ClienteID == id);
+            return ctx.Historicos.Include("Automovel").FirstOrDefault(y => y.Automovel.Cliente.ClienteID == id);
         }
 
         public static List<Historico> BuscarHistorico(int id)

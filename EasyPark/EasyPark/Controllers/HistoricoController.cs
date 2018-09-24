@@ -86,9 +86,16 @@ namespace EasyPark.Controllers
        
         public ActionResult HistoricoCliente(int id)
         {
-            ViewBag.HistoricoCliente = HistoricoDAO.HistoricoNome(id);
+            if(HistoricoDAO.HistoricoNome(id) != null)
+            {
+                ViewBag.HistoricoCliente = HistoricoDAO.HistoricoNome(id);
 
-            return View(HistoricoDAO.BuscarHistorico(id));
+                return View(HistoricoDAO.BuscarHistorico(id));
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }
