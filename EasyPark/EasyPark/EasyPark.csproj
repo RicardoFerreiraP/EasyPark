@@ -270,6 +270,7 @@
     <Content Include="Views\Historico\VagaDetalhes.cshtml" />
     <Content Include="Views\Funcionario\Empresa.cshtml" />
     <Content Include="Views\Cliente\Vagas.cshtml" />
+    <Content Include="Views\Funcionario\VagasAPI.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

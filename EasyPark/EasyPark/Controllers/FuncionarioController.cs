@@ -126,5 +126,9 @@ namespace EasyPark.Controllers
             return View();
         }
 
+        public ActionResult VagasAPI()
+        {
+            return View();
+        }
     }
 }
