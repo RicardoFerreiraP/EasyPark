@@ -10,6 +10,7 @@ namespace EasyPark.DAL
     public class FuncionarioDAO
     {
         private static Context ctx = SingletonContext.GetInstance();
+
         public static Funcionario BuscarFuncionarioPorCPF(Funcionario funcionario)
         {
             return ctx.Funcionarios.FirstOrDefault(x => x.CPF.Equals(funcionario.CPF));
@@ -44,6 +45,12 @@ namespace EasyPark.DAL
         public static void AlterarFuncionario(Funcionario funcionario)
         {
             ctx.Entry(funcionario).State = EntityState.Modified;
+            ctx.SaveChanges();
+        }
+
+        public static void RemoverFuncionario(int id)
+        {
+            ctx.Funcionarios.Remove(BuscarFuncionarioPorID(id));
             ctx.SaveChanges();
         }
     }

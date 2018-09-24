@@ -5,6 +5,7 @@ using System.Web.Mvc;
 
 namespace EasyPark.Controllers
 {
+    [Authorize]
     public class HistoricoController : Controller
     {
         // GET: Historico
@@ -18,7 +19,6 @@ namespace EasyPark.Controllers
             return View(VagaDAO.RetornarVagas());
         }
 
-        [Authorize]
         public ActionResult OcuparVaga(int id)
         {
             Vaga vaga = VagaDAO.BuscarVagaPorId(id);
@@ -30,7 +30,6 @@ namespace EasyPark.Controllers
             return View(historico);
         }
 
-        [Authorize]
         [HttpPost]
         public ActionResult OcuparVaga(Historico historico, string placa)
         {
@@ -38,10 +37,10 @@ namespace EasyPark.Controllers
             {
                 historico.Automovel = AutomovelDAO.BuscaAutomovelPorPlaca(placa);
                 historico.Vaga = VagaDAO.BuscarVagaPorId(historico.Vaga.VagaID);
-                if (HistoricoDAO.CarroEstacionado(historico) == null)
+                if (AutomovelDAO.BuscaAutomovelPorPlaca(placa) != null)
                 {
 
-                    if (AutomovelDAO.BuscaAutomovelPorPlaca(placa) != null)
+                    if (HistoricoDAO.CarroEstacionado(historico) == null)
                     {
                         HistoricoDAO.OcuparVaga(historico);
                         VagaDAO.AlterarVaga(historico.Vaga.VagaID);
@@ -49,13 +48,13 @@ namespace EasyPark.Controllers
                     }
                     else
                     {
-                        ModelState.AddModelError("", "Não existe um carro com essa placa!!");
+                        ModelState.AddModelError("", "Este carro já está estacionado!!");
                         return View(historico);
                     }
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Este carro já está estacionado!!");
+                    ModelState.AddModelError("", "Não existe um carro com está placa!");
                     return View(historico);
                 }
                
@@ -68,14 +67,13 @@ namespace EasyPark.Controllers
             
             return RedirectToAction("MostrarVagas", "Historico");
         }
-
-        [Authorize]
+      
         public ActionResult VagaDetalhes(int id)
         {
            
             return View(HistoricoDAO.DetalhesVaga(id));
         }
-
+      
         public ActionResult Finalizar(int id)
         {
 
@@ -85,11 +83,11 @@ namespace EasyPark.Controllers
             VagaDAO.Finalizado(id);
             return RedirectToAction("MostrarVagas", "Historico");
         }
-
-        [Authorize]
+       
         public ActionResult HistoricoCliente(int id)
         {
             ViewBag.HistoricoCliente = HistoricoDAO.HistoricoNome(id);
+
             return View(HistoricoDAO.BuscarHistorico(id));
         }
     }
