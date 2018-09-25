@@ -23,7 +23,7 @@ namespace EasyPark.DAL
 
         public static Historico DetalhesVaga(int id)
         {
-           return ctx.Historicos.Include("Automovel").Include("Vaga").FirstOrDefault(x => x.Vaga.VagaID == id);
+           return ctx.Historicos.Include("Automovel").Include("Vaga").FirstOrDefault(x => x.Vaga.VagaID == id && x.DataSaida == null);
         }
 
         public static Historico BuscarHistoricoPorVagaId(int id)
