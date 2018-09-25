@@ -76,6 +76,7 @@ namespace EasyPark.Controllers
             funcionarioOriginal.CPF      = funcionarioAlterado.CPF;
             funcionarioOriginal.Telefone = funcionarioAlterado.Telefone;
             funcionarioOriginal.Senha    = funcionarioAlterado.Senha;
+            funcionarioOriginal.ConfirmacaoDaSenha = funcionarioAlterado.ConfirmacaoDaSenha;
             
 
             if (ModelState.IsValid)

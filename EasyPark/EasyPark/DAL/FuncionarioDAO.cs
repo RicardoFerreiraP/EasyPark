@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
 
@@ -46,12 +47,22 @@ namespace EasyPark.DAL
         {
             ctx.Entry(funcionario).State = EntityState.Modified;
             ctx.SaveChanges();
+
         }
 
         public static void RemoverFuncionario(int id)
         {
             ctx.Funcionarios.Remove(BuscarFuncionarioPorID(id));
-            ctx.SaveChanges();
+            try
+            {
+                ctx.SaveChanges();
+            }
+
+            catch (DbEntityValidationException ex)
+            {
+
+            }
+
         }
     }
 }
